@@ -1,0 +1,34 @@
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+.typing-cursor {
+    border-right: .1em solid;
+    animation: blink .75s step-end infinite;
+}
+.card {
+    position: relative;
+    border: solid 10px transparent; /* Adjust border size as needed */
+    border-radius: 10px; /* Match your card's border-radius */
+    background-clip: padding-box, border-box;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -4px; /* Adjust to match border size */
+    border-radius: inherit; /* Inherit border-radius from the card */
+    background: linear-gradient(60deg, red, orange, yellow, green, blue, indigo, violet, red);
+    background-size: 200% 200%; /* Large enough to allow the animation to look smooth */
+    animation: moveGradient 4s linear infinite;
+  }
+  .card:hover::before {
+    opacity: 0; /* Fully visible on hover */
+    animation: moveGradient 4s linear infinite;
+  }
+  @keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
