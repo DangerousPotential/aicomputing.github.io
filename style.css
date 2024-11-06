@@ -11,6 +11,17 @@
     border-radius: 10px; /* Match your card's border-radius */
     background-clip: padding-box, border-box;
   }
+.hero-image {
+    max-width: 50%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .hero-image {
+        display: none;
+    }
+}
+
   
   .card::before {
     content: "";
